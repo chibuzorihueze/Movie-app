@@ -21,9 +21,11 @@ main {
 } */
 .movie_card {
   width: 260px;
-  height: 454px;
-  padding: 1rem;
+  height: 400px;
+  padding: 1rem 1rem 0rem 1rem;
 }
 .movie_title {
   text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
 }
