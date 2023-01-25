@@ -5,7 +5,7 @@ import { HiFire } from "react-icons/hi";
 const TopNav = () => (
   <Navbar bg="dark" expand="lg" variant="dark">
     <Container>
-      <Navbar.Brand href="#home">MoviesHub</Navbar.Brand>
+      <Navbar.Brand href="/">MoviesHub</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
