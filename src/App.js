@@ -1,11 +1,7 @@
-import React from 'react'
-import {Navbarcomp } from './components/Navbarcomp'
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 
+const App = () => <RouterProvider router={router} />;
 
-export default function App() {
-  return (
-    <div>
-      <Navbarcomp />
-    </div>
-  )
-}
+export default App;
