@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import WebLayout from "../components/layout";
-import { Home, NotFound, Trending } from "../pages";
+import { Home, MovieDetail, NotFound, Trending } from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
         children: [
           { element: <Home />, index: true },
           { element: <Trending />, path: "trending" },
+          { element: <MovieDetail />, path: ":id" },
         ],
       },
     ],
