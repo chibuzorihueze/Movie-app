@@ -1,23 +1,30 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../index.css'
+import { Trendings } from "./Trendings";
+import { Movies } from "./Movies";
+import { TVseries } from "./TVseries";
+import { Home } from "./Home";
 
 export const Navbarcomp = () => {
   return (
-    <div>
-      <Navbar className="nav" bg="dark" variant="dark">
+    <Router>
+      <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">MoviesHub</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Trendings</Nav.Link>
-            <Nav.Link href="#features">Movies</Nav.Link>
-            <Nav.Link href="#pricing">TV Series</Nav.Link>
+          <Navbar.Brand as={Link} to="/">MoviesHub</Navbar.Brand>
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/trendings">Trendings</Nav.Link>
+            <Nav.Link as={Link} to="/movies">Movies</Nav.Link>
+            <Nav.Link as={Link} to="/tvseries">TV Series</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-    </div>
+      <Route exact path="/" component={Home} />
+      <Route path="/trendings" component={Trendings} />
+      <Route path="/movies" component={Movies} />
+      <Route path="/tvseries" component={TVseries} />
+    </Router>
   );
 };
+
