@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after {
+  margin: unset;
+  padding: unset;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #333333;
+}
