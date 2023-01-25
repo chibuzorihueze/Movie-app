@@ -14,12 +14,16 @@ body {
 main {
   padding: 3rem 0rem;
 }
-.main {
+/* .main {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   row-gap: 2.5rem;
-}
+} */
 .movie_card {
   width: 260px;
   height: 454px;
+  padding: 1rem;
+}
+.movie_title {
+  text-decoration: none;
 }
