@@ -1,12 +1,10 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { TopNav } from "../components/common";
 
-const Home = () => {
-  return (
-    <div>
-      <Button variant="primary">Primary</Button>
-    </div>
-  );
-};
+const Home = () => (
+  <>
+    <TopNav />
+  </>
+);
 
 export default Home;
