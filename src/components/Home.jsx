@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import Navbarcomp from "./Navbarcomp";
 
 export const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <Navbarcomp />
+      <div>
+        {}
+      </div>
+    </>
+  );
+};
