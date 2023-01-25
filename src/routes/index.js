@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Trending } from "../pages";
+import { Home, NotFound, Trending } from "../pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <NotFound />,
     children: [
       { element: <Home />, index: true },
       { element: <Trending />, path: "trending" },
