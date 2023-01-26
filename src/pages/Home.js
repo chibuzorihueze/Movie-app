@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
 import { MoviesCard } from "../components/common";
-import { FetchAllMovies } from "../services/apis";
+import { FetchAllMoviesApi } from "../services/apis";
 
 const Home = () => {
   const [allMovies, setAllMovies] = useState([
@@ -141,7 +140,7 @@ const Home = () => {
   ]);
   const getAllMovies = async () => {
     try {
-      const res = await FetchAllMovies();
+      const res = await FetchAllMoviesApi();
       console.log(res);
       setAllMovies(allMovies);
     } catch (err) {
@@ -150,7 +149,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getAllMovies();
+    // getAllMovies();
+    console.log("hello");
   }, []);
 
   return (
