@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { MoviesCard } from "../components/common";
-import { FetchAllMoviesApi } from "../services/apis";
+import { fetchAllMoviesApi } from "../services/apis";
 
 const Home = () => {
   const [allMovies, setAllMovies] = useState([
@@ -140,7 +140,7 @@ const Home = () => {
   ]);
   const getAllMovies = async () => {
     try {
-      const res = await FetchAllMoviesApi();
+      const res = await fetchAllMoviesApi();
       console.log(res);
       setAllMovies(allMovies);
     } catch (err) {
