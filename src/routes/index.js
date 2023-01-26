@@ -5,6 +5,7 @@ import {
   MovieDetail,
   Movies,
   NotFound,
+  Search,
   Trending,
   TVSeries,
 } from "../pages";
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
           { element: <Movies />, path: "movies" },
           { element: <TVSeries />, path: "tv-series" },
           { element: <MovieDetail />, path: "/movie/:id" },
+          { element: <Search />, path: "search" },
         ],
       },
     ],

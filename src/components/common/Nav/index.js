@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { HiFire } from "react-icons/hi";
-import { TbMovie } from "react-icons/tb";
+import { TbMovie, TbSearch } from "react-icons/tb";
 import { IoMdTv } from "react-icons/io";
 
 const TopNav = () => (
@@ -31,6 +31,13 @@ const TopNav = () => (
           >
             <IoMdTv size={24} />
             TV Series
+          </Nav.Link>
+          <Nav.Link
+            href="search"
+            className="d-flex justify-content-center align-items-center"
+          >
+            <TbSearch size={24} />
+            Search
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
