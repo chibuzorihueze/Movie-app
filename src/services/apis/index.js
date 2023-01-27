@@ -1,5 +1,7 @@
 import axios from "../axios";
 
+const API_KEY = process.env.REACT_APP_API_KEY || "k_c3g1jac0";
+
 /**
  * Fetch all movies
  * @param {}
@@ -7,7 +9,7 @@ import axios from "../axios";
  */
 export const fetchAllMoviesApi = async () => {
   try {
-    const url = `Top250Movies/${process.env.REACT_APP_API_KEY}`;
+    const url = `Top250Movies/${API_KEY}`;
     const res = await axios.get(url);
     return res.data;
   } catch (error) {
@@ -17,7 +19,7 @@ export const fetchAllMoviesApi = async () => {
 
 export const fetchMovieByIdApi = async (id) => {
   try {
-    const url = `Title/${process.env.REACT_APP_API_KEY}/${id}`;
+    const url = `Title/${API_KEY}/${id}`;
     const res = await axios.get(url);
     return res.data;
   } catch (error) {
@@ -32,7 +34,7 @@ export const fetchMovieByIdApi = async (id) => {
  */
 export const fetchPopularMoviesApi = async () => {
   try {
-    const url = `MostPopularMovies/${process.env.REACT_APP_API_KEY}`;
+    const url = `MostPopularMovies/${API_KEY}`;
     const res = await axios.get(url);
     return res.data;
   } catch (error) {
@@ -47,7 +49,7 @@ export const fetchPopularMoviesApi = async () => {
  */
 export const fetchTVSeriesApi = async () => {
   try {
-    const url = `Top250TVs/${process.env.REACT_APP_API_KEY}`;
+    const url = `Top250TVs/${API_KEY}`;
     const res = await axios.get(url);
     return res.data;
   } catch (error) {
@@ -64,8 +66,8 @@ export const fetchTVSeriesOrMovieWithGenreApi = async (titleType, action) => {
   try {
     const url =
       action === ""
-        ? `AdvancedSearch/${process.env.REACT_APP_API_KEY}?title_type=${titleType}`
-        : `AdvancedSearch/${process.env.REACT_APP_API_KEY}?title_type=${titleType}&genres=${action}`;
+        ? `AdvancedSearch/${API_KEY}?title_type=${titleType}`
+        : `AdvancedSearch/${API_KEY}?title_type=${titleType}&genres=${action}`;
     const res = await axios.get(url);
     return res.data;
   } catch (error) {
