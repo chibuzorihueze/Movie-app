@@ -9,8 +9,7 @@ const Home = () => {
   const getAllMovies = async () => {
     try {
       const res = await fetchAllMoviesApi();
-      console.log(;
-      setAllMovies(res.items));
+      setAllMovies(res.items);
     } catch (err) {
       console.error(err);
     }
