@@ -118,7 +118,13 @@ const TVSeries = () => {
       </div>
       <div className="my-5">
         {allMovies.map(({ id, image, title }) => (
-          <MovieCard key={id} id={id} image={image} title={title} />
+          <MovieCard
+            key={id}
+            id={id}
+            image={image}
+            title={title}
+            category="tv"
+          />
         ))}
       </div>
     </Container>
