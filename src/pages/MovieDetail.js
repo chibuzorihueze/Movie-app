@@ -366,21 +366,16 @@ const MovieDetail = () => {
     <div className="text-white">
       <Container className="py-5 mx-auto">
         <Row>
-          <Col className="" lg={4}>
-            <div>
-              <img
-                src={movieDetail.image}
-                alt="movie_cover"
-                width={350}
-                height={500}
-              />
+          <Col className="">
+            <div className="movie_detail-img">
+              <img src={movieDetail.image} alt="movie_cover" />
             </div>
           </Col>
-          <Col lg={6} className="">
+          <Col className="">
             <h1>{movieDetail.title}</h1>
             <p className="">{movieDetail.plot}</p>
             <p>Release Date: {movieDetail.releaseDate}</p>
-            <div className="btn btn-success text-dark fw-bold d-flex justify-content-center align-items-center w-25 my-5">
+            <div className="btn btn-success w-50 text-dark fw-bold my-5">
               <TbMovie />
               Play Trailer
             </div>

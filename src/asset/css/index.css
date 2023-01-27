@@ -28,8 +28,41 @@ main {
 img {
   object-fit: cover;
 }
+.movie_detail-img {
+}
+.movie_detail-img img {
+  width: 350px;
+  height: 500px;
+}
 .cast {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  row-gap: 5rem;
+  row-gap: 60px;
+  transition: all 0.2s ease-in-out;
 }
+
+@media screen and (max-width: 576px) {
+  .cast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .cast {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* @media (min-width: 768px) and (max-width: 991px) {
+  .cast {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .cast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cast > * {
+  transition: all 0.2s ease-in-out;
+} */
