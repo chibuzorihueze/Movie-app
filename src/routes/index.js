@@ -6,7 +6,6 @@ import {
   Movies,
   NotFound,
   Search,
-  Trending,
   TVSeries,
 } from "../pages";
 

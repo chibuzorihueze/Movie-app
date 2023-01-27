@@ -33,7 +33,7 @@ const TopNav = () => (
             TV Series
           </Nav.Link>
           <Nav.Link
-            href="search"
+            href="/search"
             className="d-flex justify-content-center align-items-center"
           >
             <TbSearch size={24} />
