@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
+import MovieCard from "../components/common/Card";
+import { fetchTVSeriesOrMovieWithGenreApi } from "../services/apis";
 
 const genres = [
   { id: 0, name: "Action" },
@@ -24,17 +26,40 @@ const genres = [
 ];
 
 const Movies = () => {
+  const [currGenre, setCurrGenre] = useState("Action");
+
+  const getMoviesByGenre = useCallback(async () => {
+    try {
+      const res = await fetchTVSeriesOrMovieWithGenreApi("tv_movie", currGenre);
+      console.log(res);
+    } catch (err) {
+      throw err;
+    }
+  }, [currGenre]);
+
+  useEffect(() => {
+    getMoviesByGenre();
+  }, [getMoviesByGenre]);
+
   return (
-    <Container className="mx-auto border w-75">
+    <Container className="mx-auto w-75 my-4">
       <div
         className="genres d-flex flex-wrap"
         style={{ gap: "15px 15px", opacity: 1, transform: "none" }}
       >
         {genres.map(({ id, name }) => (
-          <Button variant="primary" size="md" key={id}>
+          <Button
+            variant={currGenre === name ? "primary" : "secondary"}
+            size="md"
+            key={id}
+            onClick={() => setCurrGenre(name)}
+          >
             {name}
           </Button>
         ))}
+      </div>
+      <div className="my-5">
+        <MovieCard />
       </div>
     </Container>
   );
