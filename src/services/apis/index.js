@@ -61,9 +61,11 @@ export const fetchTVSeriesApi = async () => {
  * @return {ReturnValueDataTypeHere} Brief description of the returning value here.
  */
 export const fetchTVSeriesOrMovieWithGenreApi = async (titleType, action) => {
-  console.log(titleType, action);
   try {
-    const url = `AdvancedSearch/${process.env.REACT_APP_API_KEY}?title_type=${titleType}&genres=${action}`;
+    const url =
+      action === ""
+        ? `AdvancedSearch/${process.env.REACT_APP_API_KEY}?title_type=${titleType}`
+        : `AdvancedSearch/${process.env.REACT_APP_API_KEY}?title_type=${titleType}&genres=${action}`;
     const res = await axios.get(url);
     return res.data;
   } catch (error) {

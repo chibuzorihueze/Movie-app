@@ -19,14 +19,14 @@ const TopNav = () => (
             Trending
           </Nav.Link>
           <Nav.Link
-            href="movies"
+            href="/movies"
             className="d-flex justify-content-center align-items-center"
           >
             <TbMovie size={24} />
             Movies
           </Nav.Link>
           <Nav.Link
-            href="tv-series"
+            href="/tv-series"
             className="d-flex justify-content-center align-items-center"
           >
             <IoMdTv size={24} />
