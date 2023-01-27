@@ -12,7 +12,7 @@ const TopNav = () => (
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link
-            href="trending"
+            href="/"
             className="d-flex justify-content-center align-items-center"
           >
             <HiFire size={24} />

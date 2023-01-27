@@ -19,7 +19,6 @@ const router = createBrowserRouter([
         element: <WebLayout />,
         children: [
           { element: <Home />, index: true },
-          { element: <Trending />, path: "trending" },
           { element: <Movies />, path: "movies" },
           { element: <TVSeries />, path: "tv-series" },
           { element: <MovieDetail />, path: "/movie/:id" },
