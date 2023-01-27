@@ -27,65 +27,12 @@ const genres = [
 
 const Movies = () => {
   const [currGenre, setCurrGenre] = useState("");
-  const [allMovies, setAllMovies] = useState([
-    {
-      id: "tt1740828",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BNGM4NTRlZjAtNzM1Ni00YTQ5LTk3YWItNWJhNmM3ZTZlYWExXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_Ratio0.6837_AL_.jpg",
-      title: "Wonder Woman",
-      description: "(2011 TV Movie)",
-      runtimeStr: "45 min",
-      genres: "Action, Adventure, Fantasy",
-      genreList: [
-        {
-          key: "Action",
-          value: "Action",
-        },
-        {
-          key: "Adventure",
-          value: "Adventure",
-        },
-        {
-          key: "Fantasy",
-          value: "Fantasy",
-        },
-      ],
-      contentRating: null,
-      imDbRating: "4.2",
-      imDbRatingVotes: "2232",
-      metacriticRating: null,
-      plot: "It's the modern day, and being Wonder Woman is complicated. Diana is leading a triple life - running a large corporation out of costume and fighting crime in costume in one identity.",
-      stars:
-        "Jeffrey Reiner, Pedro Pascal, Adrianne Palicki, Cary Elwes, Elizabeth Hurley",
-      starList: [
-        {
-          id: "tt1740828",
-          name: "Jeffrey Reiner",
-        },
-        {
-          id: "tt1740828",
-          name: "Pedro Pascal",
-        },
-        {
-          id: "tt1740828",
-          name: "Adrianne Palicki",
-        },
-        {
-          id: "tt1740828",
-          name: "Cary Elwes",
-        },
-        {
-          id: "tt1740828",
-          name: "Elizabeth Hurley",
-        },
-      ],
-    },
-  ]);
+  const [allMovies, setAllMovies] = useState([]);
 
   const getMoviesByGenre = useCallback(async () => {
     try {
       const res = await fetchTVSeriesOrMovieWithGenreApi("tv_movie", currGenre);
-      console.log(res);
+      setAllMovies(res.results);
     } catch (err) {
       throw err;
     }
