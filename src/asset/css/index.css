@@ -25,3 +25,11 @@ main {
   color: #ffffff;
   font-weight: bold;
 }
+img {
+  object-fit: cover;
+}
+.cast {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  row-gap: 5rem;
+}

@@ -376,15 +376,37 @@ const MovieDetail = () => {
               />
             </div>
           </Col>
-          <Col lg={6} className="fw-bold">
+          <Col lg={6} className="">
             <h1>{movieDetail.title}</h1>
-            <p>{movieDetail.plot}</p>
+            <p className="">{movieDetail.plot}</p>
             <p>Release Date: {movieDetail.releaseDate}</p>
             <div className="btn btn-success text-dark fw-bold d-flex justify-content-center align-items-center w-25 my-5">
               <TbMovie />
               Play Trailer
             </div>
           </Col>
+        </Row>
+        <Row className="my-4">
+          <h3>Cast</h3>
+          <div className="cast my-5">
+            {movieDetail?.actorList?.map(({ asCharacter, id, image, name }) => (
+              <div key={id}>
+                <div className="img_container d-flex justify-content-center items-center">
+                  <img
+                    src={image}
+                    alt={name}
+                    width={100}
+                    height={100}
+                    className="rounded-circle"
+                  />
+                </div>
+                <div className="text-center my-2">
+                  <p>{name}</p>
+                  <span>{asCharacter}(voice)</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </Row>
       </Container>
     </div>
